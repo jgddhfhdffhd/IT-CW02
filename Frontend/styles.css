@@ -1,52 +1,59 @@
 /* Global styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #FFF4E5; /* Soft warm background color */
+  background-color: #E1E1E1; /* Soft light gray background */
 }
 
-/* Theme colors */
-.bg-red {
-  background-color: #D84315; /* Red background */
+/* Tiffany Green color */
+.bg-tiffany-green {
+  background-color: #0ABAB5; /* Tiffany Green background */
 }
 
-.bg-orange {
-  background-color: #F57C00; /* Orange background */
+.text-tiffany-green {
+  color: #0ABAB5;
 }
 
 .text-white {
   color: white;
 }
 
-.text-red {
-  color: #D84315;
-}
-
-.text-orange {
-  color: #F57C00;
-}
-
-/* Card styles */
 .card {
-  border: 2px solid #F57C00; /* Orange border for cards */
+  border: 2px solid #0ABAB5; /* Tiffany Green border for cards */
 }
 
 .card-title {
-  color: #D84315; /* Red color for card titles */
+  color: #0ABAB5; /* Tiffany Green color for card titles */
 }
 
 /* Search bar container */
 .search-container {
-  background-color: #FFF1D3; /* Light warm background for search section */
+  background-color: #FFFFFF; /* White background for search section */
   padding: 20px;
   border-radius: 8px;
 }
 
 /* Button styles */
 .btn-primary {
-  background-color: #F57C00; /* Orange color for buttons */
+  background-color: #0ABAB5; /* Tiffany Green color for buttons */
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #D84315; /* Darker red on button hover */
+  background-color: #F1C27D; /* Light Gold color on button hover */
+}
+
+.btn-tiffany {
+  background-color: #0ABAB5; /* Tiffany Green button */
+  border: none;
+  color: white;
+}
+
+.btn-tiffany:hover {
+  background-color: #F1C27D; /* Light Gold color on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #0ABAB5; /* Tiffany Green background */
+  color: white;
 }
