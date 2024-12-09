@@ -1,0 +1,52 @@
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #FFF4E5; /* Soft warm background color */
+}
+
+/* Theme colors */
+.bg-red {
+  background-color: #D84315; /* Red background */
+}
+
+.bg-orange {
+  background-color: #F57C00; /* Orange background */
+}
+
+.text-white {
+  color: white;
+}
+
+.text-red {
+  color: #D84315;
+}
+
+.text-orange {
+  color: #F57C00;
+}
+
+/* Card styles */
+.card {
+  border: 2px solid #F57C00; /* Orange border for cards */
+}
+
+.card-title {
+  color: #D84315; /* Red color for card titles */
+}
+
+/* Search bar container */
+.search-container {
+  background-color: #FFF1D3; /* Light warm background for search section */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #F57C00; /* Orange color for buttons */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #D84315; /* Darker red on button hover */
+}
