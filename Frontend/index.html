@@ -22,8 +22,35 @@
   <section class="container my-4 search-container">
     <form class="d-flex justify-content-between">
       <input type="text" id="search-title" class="form-control me-2" placeholder="Search jobs by title...">
-      <input type="text" id="search-location" class="form-control me-2" placeholder="Search by location...">
-      <input type="text" id="search-salary" class="form-control me-2" placeholder="Search by salary...">
+
+      <!-- Location dropdown -->
+      <select id="search-location" class="form-select me-2">
+        <option value="">Search by location...</option>
+        <option value="London">London</option>
+        <option value="Manchester">Manchester</option>
+        <option value="Birmingham">Birmingham</option>
+        <option value="Leeds">Leeds</option>
+        <option value="Liverpool">Liverpool</option>
+        <option value="Cardiff">Cardiff</option>
+        <option value="Edinburgh">Edinburgh</option>
+        <option value="Glasgow">Glasgow</option>
+        <!-- Add more locations as needed -->
+      </select>
+
+      <!-- Salary dropdown -->
+      <select id="search-salary" class="form-select me-2">
+        <option value="">Search by salary...</option>
+        <option value="£0 - £20,000">£0 - £20,000</option>
+        <option value="£20,001 - £40,000">£20,001 - £40,000</option>
+        <option value="£40,001 - £60,000">£40,001 - £60,000</option>
+        <option value="£60,001 - £80,000">£60,001 - £80,000</option>
+        <option value="£80,001 - £100,000">£80,001 - £100,000</option>
+        <option value="£100,001 - £120,000">£100,001 - £120,000</option>
+        <option value="£120,001+">£120,001+</option>
+        <!-- Add more salary ranges as needed -->
+      </select>
+
+
       <button type="button" id="search-btn" class="btn btn-tiffany">Search</button>
     </form>
   </section>

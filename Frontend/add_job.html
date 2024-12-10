@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Job - DragonMart</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Include Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header with DragonMart name -->
+  <header class="text-center bg-red text-white p-3">
+    <h1>DragonMart - Add New Job</h1>
+  </header>
+
+  <!-- Add Job Form Section -->
+  <section class="container my-4">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Create a New Job Listing</h3>
+            <form id="add-job-form">
+              <div class="mb-3">
+                <label for="job-title" class="form-label">Job Title</label>
+                <input type="text" class="form-control" id="job-title" required>
+              </div>
+              <div class="mb-3">
+                <label for="job-location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="job-location" required>
+              </div>
+              <div class="mb-3">
+                <label for="job-salary" class="form-label">Salary</label>
+                <input type="text" class="form-control" id="job-salary" required>
+              </div>
+              <div class="mb-3">
+                <label for="job-description" class="form-label">Description</label>
+                <textarea class="form-control" id="job-description" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Save Job</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center bg-orange text-white p-3">
+    <p>&copy; 2024 DragonMart</p>
+    <p>Bringing the Best Chinese Goods to the UK</p>
+  </footer>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Include Custom JS -->
+  <script src="scripts.js"></script>
+
+  <script>
+    // Handle form submission for adding a new job
+    document.getElementById('add-job-form').addEventListener('submit', function (e) {
+      e.preventDefault();  // Prevent default form submission
+
+      // Get form data
+      const newJob = {
+        title: document.getElementById('job-title').value,
+        location: document.getElementById('job-location').value,
+        salary: document.getElementById('job-salary').value,
+        description: document.getElementById('job-description').value
+      };
+
+      // Send POST request to backend to add the new job
+      fetch('http://127.0.0.1:5000/api/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newJob)
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            alert('Failed to add job: ' + data.error);
+          } else {
+            alert('Job added successfully!');
+            window.location.href = 'admin-dashboard.html';  // Redirect to the admin dashboard
+          }
+        })
+        .catch(error => {
+          console.error('Error adding job:', error);
+          alert('There was an error adding the job.');
+        });
+    });
+  </script>
+</body>
+
+</html>
