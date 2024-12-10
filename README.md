@@ -8,6 +8,9 @@ https://it-cw02.onrender.com/admin-dashboard.html
 ### job-analytics
 https://it-cw02.onrender.com/job-analytics.html
 
+### job-application-management
+https://it-cw02.onrender.com/job-application-management.html
+
 ### Deployment
 * Frontend - Github <--> Render
 * Backend - Github <--> Render
