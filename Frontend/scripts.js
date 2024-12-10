@@ -1,22 +1,38 @@
+// scripts.js
+
 // Global array to store job listings
 let jobList = [];
 
 // Fetch job listings from the backend when the page loads
 document.addEventListener("DOMContentLoaded", function () {
   fetch('https://backend-8b6i.onrender.com/api/jobs')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error fetching jobs:', error);
-  });
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      jobList = data; // Assign fetched data to jobList
+      renderJobs(jobList); // Render the job listings
+    })
+    .catch(error => {
+      console.error('Error fetching jobs:', error);
+      const jobListContainer = document.querySelector('.job-list-container');
+      jobListContainer.innerHTML = '<p class="text-center text-danger">Failed to load job listings. Please try again later.</p>';
+    });
 });
 
 // Function to render job listings
 function renderJobs(jobs) {
   const jobListContainer = document.querySelector('.job-list-container');
   jobListContainer.innerHTML = ''; // Clear current job listings
+
+  if (jobs.length === 0) {
+    jobListContainer.innerHTML = '<p class="text-center">No job listings found.</p>';
+    return;
+  }
 
   jobs.forEach(job => {
     const jobCard = document.createElement('div');
@@ -35,7 +51,6 @@ function renderJobs(jobs) {
     jobListContainer.appendChild(jobCard);
   });
 }
-
 
 // Search functionality
 document.querySelector('#search-btn').addEventListener('click', function () {
