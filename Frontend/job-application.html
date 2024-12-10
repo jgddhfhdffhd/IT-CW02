@@ -70,7 +70,7 @@
     }
 
     // Fetch job details to display on the application form
-    fetch(`http://127.0.0.1:5000/api/jobs/${jobId}`)
+    fetch(`https://backend-8b6i.onrender.com/api/jobs/${jobId}`)
       .then(response => response.json())
       .then(job => {
         if (job.error) {
@@ -95,7 +95,7 @@
       formData.append("resume", document.getElementById('resume').files[0]);
 
       // Submit application
-      fetch('http://127.0.0.1:5000/api/applications', {
+      fetch('https://backend-8b6i.onrender.com/api/applications', {
         method: 'POST',
         body: JSON.stringify({
           jobId: jobId,

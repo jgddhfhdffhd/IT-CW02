@@ -3,7 +3,7 @@ let jobList = [];
 
 // Fetch job listings from the backend when the page loads
 document.addEventListener("DOMContentLoaded", function () {
-  fetch('http://127.0.0.1:5000/api/jobs')
+  fetch('https://backend-8b6i.onrender.com/api/jobs')
   .then(response => response.json())
   .then(data => {
     console.log(data);

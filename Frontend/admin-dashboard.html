@@ -90,7 +90,7 @@
 
   <script>
     // Fetch the job listings from the backend
-    fetch('http://127.0.0.1:5000/api/jobs')
+    fetch('https://backend-8b6i.onrender.com/api/jobs')
       .then(response => response.json())
       .then(jobs => {
         const jobTableBody = document.querySelector('#job-table tbody');
@@ -118,7 +118,7 @@
     // Function to open the edit modal and populate it with job data
     function openEditModal(jobId) {
       // Fetch job details by jobId
-      fetch(`http://127.0.0.1:5000/api/jobs/${jobId}`)
+      fetch(`https://backend-8b6i.onrender.com/api/jobs/${jobId}`)
         .then(response => response.json())
         .then(job => {
           if (job.error) {
@@ -141,7 +141,7 @@
                 description: document.getElementById('edit-description').value
               };
 
-              fetch(`http://127.0.0.1:5000/api/jobs/${jobId}`, {
+              fetch(`https://backend-8b6i.onrender.com/api/jobs/${jobId}`, {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json'
@@ -177,7 +177,7 @@
     // Function to handle job deletion
     function deleteJob(jobId) {
       if (confirm('Are you sure you want to delete this job?')) {
-        fetch(`http://127.0.0.1:5000/api/jobs/${jobId}`, {
+        fetch(`https://backend-8b6i.onrender.com/api/jobs/${jobId}`, {
           method: 'DELETE'
         })
           .then(response => response.json())

@@ -7,7 +7,7 @@ if (!/^[0-9a-fA-F]{24}$/.test(jobId)) {
   document.getElementById('job-details').innerHTML = `<p>Invalid job ID format.</p>`;
 } else {
   // Fetch job details from the backend
-  fetch(`http://127.0.0.1:5000/api/jobs/${jobId}`)
+  fetch(`https://backend-8b6i.onrender.com/api/jobs/${jobId}`)
     .then(response => response.json())
     .then(job => {
       if (job.error) {
