@@ -21,7 +21,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for cross-origin requests
 
 # MongoDB Atlas connection URI
-MONGO_URI = 'mongodb://admin:admin@35.242.144.7:27017/admin'
+MONGO_URI = 'mongodb://admin:admin@35.197.233.18:27017/admin'
 client = MongoClient(MONGO_URI)
 db = client.job_portal  # Access the 'job_portal' database
 
